@@ -52,3 +52,18 @@ setTimeout(() =>{ character_2.stop()
   } ,500)
 }, 750)    
 
+// 4
+
+function startLoop(){
+    character.walkEast() 
+    setTimeout(()=>{ 
+      character.walkNorth() 
+      setTimeout(()=>{ 
+        character.walkWest() 
+        setTimeout(()=>{ 
+          character.walkSouth() 
+          setTimeout(()=>
+            startLoop(),500) 
+        },1000) 
+      } ,500) 
+    },1000) }
