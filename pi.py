@@ -1,5 +1,5 @@
 
-from bs4 import BeautifulSoup
+from pi import BeautifulSoup
 import requests
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029 Safari/537.36'}
 
@@ -18,3 +18,8 @@ print(location)
 print(time)
 print(info)
 print(weather+"°C")
+
+print("enter the city name")
+city=imput()
+city=city+"weather"
+weather(city)

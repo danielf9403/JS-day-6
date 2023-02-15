@@ -1,22 +1,39 @@
 class Clock {
-    constructor(time, setTime) {
+    constructor(time) {
         this.time = time;
-        this.setTime = setTime;
+        this.alarmTime = 0;
     }
 
     setTime() {
-        this.time = getCurentTime()
+        this.time = new Date().toLocaleTimeString();
+    }
+
+    setAlarmTime(){
+        this.alarmTime = new Date().getTime();
     }
 
     getTime() {
-        this.time = getCurentTime();
+        this.time = setTime();
         return this.time;
     }
 
     tellTime() {
-        console.log(this.getTime());
+        console.log(this.getTime()); 
+    }
+
+    setAlarm(durations) {
+        let futureTime = new Date().getTime() + durations;
+        
+        while (this.alarmTime < futureTime) {
+            this.setAlarmTime();
+        }
+        console.log("time up! you should get up!");
     }
 
 }
 
-const Clock = new Clock();
+
+const clock = new Clock();
+
+clock.setAlarm(5000);
+
